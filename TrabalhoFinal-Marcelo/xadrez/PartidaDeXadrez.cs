@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using tabuleiro;
+using System;
 
 namespace xadrez {
     class PartidaDeXadrez {
@@ -25,7 +26,6 @@ namespace xadrez {
         public void executarMovimento(Posicao origem,Posicao destino) {
             Peca p = tab.retirarPeca(origem);
             p.incrementarQteMovimentos();
-            tab.retirarPeca(destino);
             Peca pecaCapturada = tab.retirarPeca(destino);
             tab.colocarPeca(p, destino);
             if (pecaCapturada != null) {
